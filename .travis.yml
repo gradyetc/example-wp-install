@@ -19,7 +19,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose build
   - docker-compose up -d
-  - sleep 10
+  - sleep 30
   - bash bin/setup_test_db.sh
 
 script:
