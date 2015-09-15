@@ -1,0 +1,32 @@
+---
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+env:
+  - WORDPRESS_SITE_URL=http://example-install.dev
+  - WORDPRESS_DB_NAME=wordpress
+  - WORDPRESS_DB_USER=root
+  - WORDPRESS_DB_PASS=root
+  - WORDPRESS_DB_HOST=example-install.dev
+  - WORDPRESS_DB_PORT=3306
+
+addons:
+  hosts:
+    - example-install.dev
+
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker-compose build
+  - docker-compose up -d
+  - sleep 5
+  - bash bin/setup_test_db.sh
+
+script:
+  - bash bin/run_smoketests.sh
+

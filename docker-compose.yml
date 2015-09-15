@@ -1,0 +1,14 @@
+wordpress:
+  build: .
+  links:
+    - db:mysql
+  ports:
+    - 80:80
+
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+  ports:
+    - 3306:3306
+

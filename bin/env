@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export WORDPRESS_SITE_URL=http://example-install.dev
+export WORDPRESS_DB_NAME=wordpress
+export WORDPRESS_DB_USER=root
+export WORDPRESS_DB_PASS=root
+export WORDPRESS_DB_HOST=example-install.dev
+export WORDPRESS_DB_PORT=3306
+
