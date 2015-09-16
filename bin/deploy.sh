@@ -12,5 +12,5 @@ ssh-add .travis/prod.pem
 
 # Add remote and deploy
 git remote add deploy git@github.com:mgburns/example-install-prod.git
-git push deploy master
+git push -f deploy $TRAVIS_BRANCH:master
 

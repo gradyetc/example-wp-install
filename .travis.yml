@@ -26,8 +26,12 @@ script:
   - bash bin/run_smoketests.sh
 
 deploy:
-  provider: script
-  script: bin/deploy.sh
-  on:
-    branch: master
+  - provider: script
+    script: bin/deploy.sh
+    on:
+      branch: master
+  - provider: script
+    script: bin/deploy-staging.sh
+    on:
+      branch: staging
 
