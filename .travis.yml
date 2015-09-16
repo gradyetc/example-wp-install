@@ -25,3 +25,9 @@ before_install:
 script:
   - bash bin/run_smoketests.sh
 
+deploy:
+  provider: script
+  script: bin/deploy.sh
+  on:
+    branch: master
+
