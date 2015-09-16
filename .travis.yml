@@ -31,7 +31,7 @@ deploy:
     on:
       branch: master
   - provider: script
-    script: .travis/deploy-staging.sh
+    script: .travis/deploy.sh
     on:
       branch: staging
 
