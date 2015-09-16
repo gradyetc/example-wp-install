@@ -20,18 +20,18 @@ before_install:
   - docker-compose build
   - docker-compose up -d
   - sleep 30
-  - bash bin/setup_test_db.sh
+  - bash test/scripts/setup_test_db.sh
 
 script:
-  - bash bin/run_smoketests.sh
+  - bash test/scripts/run_smoketests.sh
 
 deploy:
   - provider: script
-    script: bin/deploy.sh
+    script: .travis/deploy.sh
     on:
       branch: master
   - provider: script
-    script: bin/deploy-staging.sh
+    script: .travis/deploy.sh
     on:
       branch: staging
 
