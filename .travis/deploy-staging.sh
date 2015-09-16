@@ -2,7 +2,7 @@
 
 set -ev
 
-# Decrypt production deploy key
+# Decrypt staging deploy key
 openssl aes-256-cbc -K $encrypted_8405297456b8_key -iv $encrypted_8405297456b8_iv -in .travis/staging.pem.enc -out .travis/staging.pem -d
 
 # Start SSH agent and add deploy key (must have push access to repos below)
