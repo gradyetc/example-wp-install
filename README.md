@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/mgburns/example-wp-install.svg?branch=staging)](https://travis-ci.org/mgburns/example-wp-install)
+[![Build Status](https://travis-ci.org/mgburns/example-wp-install.svg?branch=master)](https://travis-ci.org/mgburns/example-wp-install)
 
 This repository is a proof-of-concept WordPress install that demonstrates continous integration and delivery using [Travis CI](https://travis-ci.org/).
 
