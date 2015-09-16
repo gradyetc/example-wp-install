@@ -29,7 +29,7 @@ private_post_json="$(curl -v -u admin:password $SITE_URL/wp-json/wp/v2/posts/4 2
 assertContains "HTTP/1.1 200 OK" "$home"
 assertContains "HTTP/1.1 200 OK" "$post_json"
 
-assertContains "<meta name=\"generator\" content=\"WordPress 4.3.1\" />" "$home"
+assertContains "<meta name=\"generator\" content=\"WordPress 4.3\" />" "$home"
 assertContains "\"title\":{\"rendered\":\"Hello world!\"}" "$post_json"
 assertContains "\"title\":{\"rendered\":\"Private: Hello secret world!\"}" "$private_post_json"
 
